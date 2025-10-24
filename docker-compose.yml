@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  postget-api:
+    build: .
+    container_name: postget-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app        # live code reload (optional)
+      - ./latest_post.json:/app/latest_post.json
+    restart: unless-stopped
+
